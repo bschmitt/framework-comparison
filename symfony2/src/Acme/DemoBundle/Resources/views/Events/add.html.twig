@@ -1,0 +1,18 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Add Event" %}
+
+{% block content %}
+    <form action="{{ path('_events_add') }}" method="POST" id="contact_form">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.title) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.time) }}
+        {{ form_row(form.location) }}
+
+        {{ form_rest(form) }}
+        <input type="submit" value="Send" class="symfony-button-grey" />
+    </form>
+{% endblock %}

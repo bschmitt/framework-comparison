@@ -1,0 +1,62 @@
+Uncaught exception #1264589155 in line 494 of /srv/www/vhosts/flow3.dev/flow-base/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: Object "TYPO3\Fluid\ViewHelpers\Format\TimeViewHelper" is not registered.
+
+20 TYPO3\Flow\Object\ObjectManager::get("TYPO3\Fluid\ViewHelpers\Format\TimeViewHelper")
+19 TYPO3\Fluid\Core\Parser\TemplateParser_Original::initializeViewHelperAndAddItToStack(TYPO3\Fluid\Core\Parser\ParsingState, "f", "format.time", array|0|)
+18 TYPO3\Fluid\Core\Parser\TemplateParser_Original::objectAccessorHandler(TYPO3\Fluid\Core\Parser\ParsingState, "event.time", "->", "f:format.time()", "")
+17 TYPO3\Fluid\Core\Parser\TemplateParser_Original::textAndShorthandSyntaxHandler(TYPO3\Fluid\Core\Parser\ParsingState, "
+
+						{event.description}
+						{event.date->f:format.date()}
+						{event.time->f:format.time()}
+						{event.location}
+
+
+						", 2)
+16 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|43|, 2)
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="Default" />
+
+<f:section name="Title">A list of events</f:section>
+
+<f:section name="Content">
+	<f:if condition="{events}">
+		<f:then>
+			<ul>
+				<f:for each="{events}" as="event">
+					<li>
+						<f:link.action action="show" arguments="{event: event}">{event.title}</f:link.action>
+
+						{event.description}
+						{event.date->f:format.date()}
+						{event.time->f:format.time()}
+						{event.location}
+
+
+						<f:link.action action="edit" arguments="{event: event}">Edit</f:link.action>
+
+						<f:form action="delete" arguments="{event: event}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No events created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new event</f:link.action></p>
+</f:section>")
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

@@ -1,0 +1,33 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Edit event "{event.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{event}" objectName="event">
+		<ol>
+			<li>
+				<label>Title:</label>
+				<f:form.textfield property="title"/>
+			</li>
+			<li>
+				<label>Description:</label>
+				<f:form.textfield property="description"/>
+			</li>
+			<li>
+				<label>Date:</label>
+				<f:form.textfield property="date"/>
+			</li>
+			<li>
+				<label>Time:</label>
+				<f:form.textfield property="time"/>
+			</li>
+			<li>
+				<label>Location:</label>
+				<f:form.textfield property="location"/>
+			</li>
+			<li>
+				<f:form.submit value="Create"/>
+			</li>
+		</ol>
+	</f:form>
+</f:section>

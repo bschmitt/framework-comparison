@@ -1,0 +1,38 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Events" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Events</h1>
+    <ul id="demo-list">
+        <li><a href="{{ path('_events_add', {'name': 'Add'}) }}">Add</a></li>
+    </ul>
+
+    <table>
+
+        {% for event in events %}
+            <tr>
+                <td>
+                    {{ event.title }}
+                </td>
+                <td>
+                    {{ event.description }}
+                </td>
+                <td>
+                    {{ event.date|date("m/d/Y") }}
+                </td>
+                <td>
+                    {{ event.time|date("H:i:s") }}
+                </td>
+                <td>
+                    {{ event.location }}
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}
